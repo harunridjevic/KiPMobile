@@ -1,0 +1,154 @@
+*{
+	margin:0;
+	padding:0;
+	-webkit-tap-highlight-color: transparent;
+	-webkit-user-select: none;
+	font-family: 'Inter', sans-serif;
+	font-weight:bold;
+}
+body{
+	background-color:yellow;
+}
+header{
+	width:100%;
+	height:100px;
+	position:fixed;
+	top:0;
+	left:0;
+	text-align:center;
+	z-index:3;
+	background-color:yellow;
+}
+
+#title{
+	width:100%;
+	height:50px;
+	background-color:black;
+	color:white;
+	position:fixed;
+	top:100px;
+	left:0;
+	text-align:center;
+	font-size:30px;
+	padding-top:20px;
+	z-index:3;
+}
+main{
+	width:100%;
+	position:absolute;
+	z-index:2;
+	top:170px;
+	background-color:yellow;
+}
+
+#divUsername{
+	border-radius:14px;
+	position:relative;
+	top:20px;
+	left:5%;
+	height:95px;
+	width:90%;
+	background-color:white;
+	padding-top:10px;
+}
+#divUsername label{
+	position:relative;
+	font-size:25px;
+	left:20px;
+}
+#divUsername input{
+	border-radius:14px;
+	height:50px;
+	position:relative;
+	font-size:20px;
+	left:20px;
+	width: calc(100% - 40px);
+	background-color:black;
+	color:white;
+	text-indent: 10px;
+}
+#divPassword{
+	border-radius:14px;
+	position:relative;
+	top:50px;
+	left:5%;
+	height:95px;
+	width:90%;
+	background-color:white;
+	padding-top:10px;
+}
+#divPassword label{
+	position:relative;
+	font-size:25px;
+	left:20px;
+}
+#divPassword input{
+	border-radius:14px;
+	height:50px;
+	position:relative;
+	font-size:20px;
+	left:20px;
+	width: calc(100% - 40px);
+	background-color:black;
+	color:white;
+	text-indent: 10px;
+}
+
+footer{
+	position:fixed;
+	left:0;
+	bottom:0;
+	margin-top:70px;
+	width:100%;
+	height:170px;
+	z-index:-1;
+}
+#divRegistration{
+	display:inline-block;
+	background-color:white;
+	width:50%;
+	height:100%;
+	border-radius:0 40px 0 0;
+}
+#divRegistration button{
+	border-radius:14px;
+	height:100px;
+	width:calc(100% - 20px);
+	position:relative;
+	font-size:20px;
+	float:left;
+	margin-left:10px;
+	background-color:black;
+	color:white;
+	padding:20px;
+	top:30px;
+	
+}
+#divRegistration p{
+	position:relative;
+	top:20px;
+	padding-left:15px;
+	width:100%;
+}
+#divSubmit{
+	display:inline-block;
+	float:right;
+	width:50%;
+	height:100%;
+	border-radius:40px;
+	background-color:yellow;
+}
+#divSubmit button{
+	width:calc(100% - 60px);
+	border-radius:14px;
+	height:120px;
+	position:relative;
+	font-size:20px;
+	float:right;
+	margin-right:30px;
+	background-color:black;
+	color:white;
+	padding:40px;
+	top:30px;
+	
+}
