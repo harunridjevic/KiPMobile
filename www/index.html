@@ -57,12 +57,12 @@
 
 			</div>
 			<div id="nav-content" class="invisible">
-				<div id="profile">
+				<div id="profile" onclick="goToLogin()">
 					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6" width="50px" style="position:relative;display:block;margin:auto;top:15px;">
 					<path fill-rule="evenodd" d="M7.5 6a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM3.751 20.105a8.25 8.25 0 0116.498 0 .75.75 0 01-.437.695A18.683 18.683 0 0112 22.5c-2.786 0-5.433-.608-7.812-1.7a.75.75 0 01-.437-.695z" clip-rule="evenodd" />
 					</svg>
 					<div style="position:relative;top:20px;display:block;width:100%;text-align:center;font-weight:bold">
-					<a href="login.html">Profil</a>
+					Profil
 					</div>
 				</div>
 				<div id="articles">
@@ -119,7 +119,10 @@
 		<main>
 		<!-- ARTICLES -->
 		<script>
-			
+			function goToLogin(){
+				window.location.href = "login.html";
+
+			}
 			$(document).ready(function(){
 			
 						$.ajax({
@@ -147,8 +150,7 @@
 			 
 					
 			});
-		</script>
-		<script>
+		
 		var name = sessionStorage.getItem("username");
 			if(name != "null"){
 				document.getElementById("profile-name-text").innerHTML = name;

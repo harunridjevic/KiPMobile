@@ -12,64 +12,78 @@
 			ULOGUJ SE
 		</div>
 		<main>
+		<form>
 		<div id="divUsername">
-		<label>Korisnicko ime:</label><br>
+		<label for="username">Korisnicko ime:</label><br>
 		<input id="username" >
 		</div>
 		<div id="divPassword">
-		<label>Sifra:</label><br>
+		<label for="password">Sifra:</label><br>
 		<input id="password" type="password">
 		</div>
 		<br><br><br>
 		</main>
 		<footer>
-		<div id="divRegistration">
-		<p>Nemas nalog?</p>
-		<button onclick="location.href='registration.html';"> Registruj se </button>
-		</div>
 		<div id="divSubmit">
-		<button id="btnLogin" >
+		<button id="btnLogin" type="submit" name="submit" >
 			<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6" style="color:yellow;height:40px;">
   <path stroke-linecap="round" stroke-linejoin="round" d="M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5" />
 </svg>
 
 		</button>
 		</div>
+		<div id="divRegistration">
+		<p>Nemas nalog?</p>
+		<button onclick="location.href='registration.html';"> Registruj se </button>
+		</div>
+		
 		</footer>
+		</form>
 		<script src="cordova.js"></script>
 		<link rel="stylesheet" href="css/login.css">
 	</body>
 	<script>
 			
-			$(document).ready(function(){
-				$("#btnLogin").click(function(){
-						username = document.getElementById("username").value; 
-						password = document.getElementById("password").value; 
-						if(username != "" && password!=""){
-					$.ajax({
-						url: "http://kipba.atwebpages.com/api.php",
-						type: "GET",
-						dataType: "json",
-						data: { type:"login", username:username, password:password},
-						ContentType:"application/json",
-						success: function(response)
-						{
-							alert(response.responseText);
-						},
-						error: function(err)
-						{
-							if(err.responseText!="undefined"){
-								sessionStorage.setItem("username", username);
-								sessionStorage.setItem("password", password);
-								document.location.href = "index.html";
-							}else{
-								alert("Pogresno korisnicko ime/ lozinka");
-							}
+			
+			$(function () {
+
+        $('form').on('submit', function (e) {
+		
+            e.preventDefault();
+			username = document.getElementById("username").value; 
+			password = document.getElementById("password").value; 
+			if(username != "" && password!=""){
+			$.ajax({
+				url: "http://kipba.atwebpages.com/api.php",
+				type: "GET",
+				dataType: "json",
+				data: { type:"login", username:username, password:password},
+				ContentType:"application/json",
+				success: function(response)
+				{
+					alert(response.responseText);
+				},
+				error: function(err)
+				{
+					if(err.responseText!="undefined"){
+						sessionStorage.setItem("username", username);
+						sessionStorage.setItem("password", password);
+						document.location.href = "index.html";
+					}else{
+						alert("Pogresno korisnicko ime/ lozinka");
 						}
-					});}else{
+				}
+				});}else{
 						alert("Unesite korisnicko ime i sifru.");
-					}
-				});
-			});
+				}
+        });
+
+      });
+		
+			
+				
+						
+				
+			
 		</script>
 </html>
