@@ -40,6 +40,9 @@
   </head>
   <body style="padding-top:100px">
     <img src="video/1.gif" height="150px" id="loading">
+	<div style="position:fixed;z-index:10;left:0;top:0;width:100%;height:100%;background-color:black;opacity:.4;transition:0.3s;" id="darkscreen">
+	
+	</div>
     <!--NAVBAR-->
     <nav style="cursor: pointer;" id="nav">
       <img src="img/logo/logov1transparent.png" height="70px" id="logo">
@@ -110,72 +113,24 @@
       </div>
     </nav>
     <div id="searchbar">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" style="width:30px;margin-top:65px;">
+      
+	  
+		<input placeholder =" Pretrazi KiP..." id="search" style="position:absolute;top:63px;height:30px;width:calc(100% - 100px);left:20px;font-size:15px;color:white;background-color:black;">
+		<button onclick="searchup()" id="searchbtn" style="position:absolute;top:63px;height:35px;width:55px;right:20px;background-color:yellow;border-radius:5px" ><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" style="width:30px">
         <path fill-rule="evenodd" d="M10.5 3.75a6.75 6.75 0 100 13.5 6.75 6.75 0 000-13.5zM2.25 10.5a8.25 8.25 0 1114.59 5.28l4.69 4.69a.75.75 0 11-1.06 1.06l-4.69-4.69A8.25 8.25 0 012.25 10.5z" clip-rule="evenodd" />
-      </svg>
+      </svg></button>
+	  
     </div>
-    <div id="quickcategory">
-	<span >Brzi odabir kategorija:</span>
-	<div id="qcbottomcontainer">
-		<div id="qcbutton">
-			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6" style="color:yellow;width:40px;margin-top:15px">
-  <path d="M3.375 4.5C2.339 4.5 1.5 5.34 1.5 6.375V13.5h12V6.375c0-1.036-.84-1.875-1.875-1.875h-8.25zM13.5 15h-12v2.625c0 1.035.84 1.875 1.875 1.875h.375a3 3 0 116 0h3a.75.75 0 00.75-.75V15z" />
-  <path d="M8.25 19.5a1.5 1.5 0 10-3 0 1.5 1.5 0 003 0zM15.75 6.75a.75.75 0 00-.75.75v11.25c0 .087.015.17.042.248a3 3 0 015.958.464c.853-.175 1.522-.935 1.464-1.883a18.659 18.659 0 00-3.732-10.104 1.837 1.837 0 00-1.47-.725H15.75z" />
-  <path d="M19.5 19.5a1.5 1.5 0 10-3 0 1.5 1.5 0 003 0z" />
-</svg>
-
-		</div>
-		<div id="qcbutton">
-		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6" style="color:yellow;width:40px;margin-top:15px">
-  <path fill-rule="evenodd" d="M2.25 5.25a3 3 0 013-3h13.5a3 3 0 013 3V15a3 3 0 01-3 3h-3v.257c0 .597.237 1.17.659 1.591l.621.622a.75.75 0 01-.53 1.28h-9a.75.75 0 01-.53-1.28l.621-.622a2.25 2.25 0 00.659-1.59V18h-3a3 3 0 01-3-3V5.25zm1.5 0v7.5a1.5 1.5 0 001.5 1.5h13.5a1.5 1.5 0 001.5-1.5v-7.5a1.5 1.5 0 00-1.5-1.5H5.25a1.5 1.5 0 00-1.5 1.5z" clip-rule="evenodd" />
-</svg>
-
-		</div>
-		<div id="qcbutton">
-		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6" style="color:yellow;width:40px;margin-top:15px">
-  <path d="M10.5 18.75a.75.75 0 000 1.5h3a.75.75 0 000-1.5h-3z" />
-  <path fill-rule="evenodd" d="M8.625.75A3.375 3.375 0 005.25 4.125v15.75a3.375 3.375 0 003.375 3.375h6.75a3.375 3.375 0 003.375-3.375V4.125A3.375 3.375 0 0015.375.75h-6.75zM7.5 4.125C7.5 3.504 8.004 3 8.625 3H9.75v.375c0 .621.504 1.125 1.125 1.125h2.25c.621 0 1.125-.504 1.125-1.125V3h1.125c.621 0 1.125.504 1.125 1.125v15.75c0 .621-.504 1.125-1.125 1.125h-6.75A1.125 1.125 0 017.5 19.875V4.125z" clip-rule="evenodd" />
-</svg>
-
-		</div>
-		<div id="qcbutton">
-		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6" style="color:yellow;width:40px;margin-top:15px">
-  <path d="M19.006 3.705a.75.75 0 00-.512-1.41L6 6.838V3a.75.75 0 00-.75-.75h-1.5A.75.75 0 003 3v4.93l-1.006.365a.75.75 0 00.512 1.41l16.5-6z" />
-  <path fill-rule="evenodd" d="M3.019 11.115L18 5.667V9.09l4.006 1.456a.75.75 0 11-.512 1.41l-.494-.18v8.475h.75a.75.75 0 010 1.5H2.25a.75.75 0 010-1.5H3v-9.129l.019-.006zM18 20.25v-9.565l1.5.545v9.02H18zm-9-6a.75.75 0 00-.75.75v4.5c0 .414.336.75.75.75h3a.75.75 0 00.75-.75V15a.75.75 0 00-.75-.75H9z" clip-rule="evenodd" />
-</svg>
-
-		</div>
-		<div id="qcbutton">
-		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6" style="color:yellow;width:40px;margin-top:15px">
-  <path d="M11.25 4.533A9.707 9.707 0 006 3a9.735 9.735 0 00-3.25.555.75.75 0 00-.5.707v14.25a.75.75 0 001 .707A8.237 8.237 0 016 18.75c1.995 0 3.823.707 5.25 1.886V4.533zM12.75 20.636A8.214 8.214 0 0118 18.75c.966 0 1.89.166 2.75.47a.75.75 0 001-.708V4.262a.75.75 0 00-.5-.707A9.735 9.735 0 0018 3a9.707 9.707 0 00-5.25 1.533v16.103z" />
-</svg>
-
-		</div>
-		<div id="qcbutton">
-		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6" style="color:yellow;width:40px;margin-top:15px">
-  <path fill-rule="evenodd" d="M19.952 1.651a.75.75 0 01.298.599V16.303a3 3 0 01-2.176 2.884l-1.32.377a2.553 2.553 0 11-1.403-4.909l2.311-.66a1.5 1.5 0 001.088-1.442V6.994l-9 2.572v9.737a3 3 0 01-2.176 2.884l-1.32.377a2.553 2.553 0 11-1.402-4.909l2.31-.66a1.5 1.5 0 001.088-1.442V9.017 5.25a.75.75 0 01.544-.721l10.5-3a.75.75 0 01.658.122z" clip-rule="evenodd" />
-</svg>
-
-		</div>
-		<div id="qcbutton">
-		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6" style="color:yellow;width:40px;margin-top:15px">
-  <path fill-rule="evenodd" d="M20.599 1.5c-.376 0-.743.111-1.055.32l-5.08 3.385a18.747 18.747 0 00-3.471 2.987 10.04 10.04 0 014.815 4.815 18.748 18.748 0 002.987-3.472l3.386-5.079A1.902 1.902 0 0020.599 1.5zm-8.3 14.025a18.76 18.76 0 001.896-1.207 8.026 8.026 0 00-4.513-4.513A18.75 18.75 0 008.475 11.7l-.278.5a5.26 5.26 0 013.601 3.602l.502-.278zM6.75 13.5A3.75 3.75 0 003 17.25a1.5 1.5 0 01-1.601 1.497.75.75 0 00-.7 1.123 5.25 5.25 0 009.8-2.62 3.75 3.75 0 00-3.75-3.75z" clip-rule="evenodd" />
-</svg>
-
-		</div>
-		<div id="qcbutton">
-		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6" style="color:yellow;width:40px;margin-top:15px">
-  <path fill-rule="evenodd" d="M4.5 12a1.5 1.5 0 113 0 1.5 1.5 0 01-3 0zm6 0a1.5 1.5 0 113 0 1.5 1.5 0 01-3 0zm6 0a1.5 1.5 0 113 0 1.5 1.5 0 01-3 0z" clip-rule="evenodd" />
-</svg>
-
-		</div>
-	</div>
-	</div>
+    
       <!-- ARTICLES -->
       <script>
 	  var start = 0;
 	  var limit = 6;
 	  var reachedMax = false;
+	  var search = "clio";
+	  var weird = false;
+		
+	  //navbar buttons
         function goToLogin() {
           window.location.href = "login.html";
         }
@@ -183,16 +138,44 @@
           window.location.href = "index.html";
         }
 		
+		$("#search").keyup(function(event) {
+    if (event.keyCode === 13) {
+        $("#searchbtn").click();
+    }
+});
 		$(window).scroll(function(){
 			if($(window).scrollTop()==$(document).height()-$(window).height()){
+			if(weird == 1){
+			weird = 0;
+			}
+			else
 				getData();
 			   }
 		});
-        $(document).ready(function() {
-              getData();
-			  
-        });
-			function getData(){
+		function searchup(){
+		const boxes = document.querySelectorAll('.article1');
+	
+						boxes.forEach(box => {
+						  box.remove();
+						});
+		weird = 1;
+		start = 0;
+			   limit = 6;
+			   reachedMax = false;
+		document.getElementById("loading").classList.remove('hiddenLoading');
+		document.getElementById("darkscreen").classList.remove('hiddenLoading');
+		if(document.getElementById("quickcategory")!=null)
+		document.getElementById("quickcategory").remove();
+		if(document.getElementById("search").value==""){
+		var categories = "<div id='quickcategory'><span >Brzi odabir kategorija:</span><div id='qcbottomcontainer'><div id='qcbutton'><svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='currentColor' class='w-6 h-6' style='color:yellow;width:40px;margin-top:15px'><path d='M3.375 4.5C2.339 4.5 1.5 5.34 1.5 6.375V13.5h12V6.375c0-1.036-.84-1.875-1.875-1.875h-8.25zM13.5 15h-12v2.625c0 1.035.84 1.875 1.875 1.875h.375a3 3 0 116 0h3a.75.75 0 00.75-.75V15z' /><path d='M8.25 19.5a1.5 1.5 0 10-3 0 1.5 1.5 0 003 0zM15.75 6.75a.75.75 0 00-.75.75v11.25c0 .087.015.17.042.248a3 3 0 015.958.464c.853-.175 1.522-.935 1.464-1.883a18.659 18.659 0 00-3.732-10.104 1.837 1.837 0 00-1.47-.725H15.75z' /><path d='M19.5 19.5a1.5 1.5 0 10-3 0 1.5 1.5 0 003 0z' /></svg></div><div id='qcbutton'><svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='currentColor' class='w-6 h-6' style='color:yellow;width:40px;margin-top:15px'><path fill-rule='evenodd' d='M2.25 5.25a3 3 0 013-3h13.5a3 3 0 013 3V15a3 3 0 01-3 3h-3v.257c0 .597.237 1.17.659 1.591l.621.622a.75.75 0 01-.53 1.28h-9a.75.75 0 01-.53-1.28l.621-.622a2.25 2.25 0 00.659-1.59V18h-3a3 3 0 01-3-3V5.25zm1.5 0v7.5a1.5 1.5 0 001.5 1.5h13.5a1.5 1.5 0 001.5-1.5v-7.5a1.5 1.5 0 00-1.5-1.5H5.25a1.5 1.5 0 00-1.5 1.5z' clip-rule='evenodd' /></svg></div><div id='qcbutton'><svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='currentColor' class='w-6 h-6' style='color:yellow;width:40px;margin-top:15px'><path d='M10.5 18.75a.75.75 0 000 1.5h3a.75.75 0 000-1.5h-3z' /><path fill-rule='evenodd' d='M8.625.75A3.375 3.375 0 005.25 4.125v15.75a3.375 3.375 0 003.375 3.375h6.75a3.375 3.375 0 003.375-3.375V4.125A3.375 3.375 0 0015.375.75h-6.75zM7.5 4.125C7.5 3.504 8.004 3 8.625 3H9.75v.375c0 .621.504 1.125 1.125 1.125h2.25c.621 0 1.125-.504 1.125-1.125V3h1.125c.621 0 1.125.504 1.125 1.125v15.75c0 .621-.504 1.125-1.125 1.125h-6.75A1.125 1.125 0 017.5 19.875V4.125z' clip-rule='evenodd' /></svg></div><div id='qcbutton'><svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='currentColor' class='w-6 h-6' style='color:yellow;width:40px;margin-top:15px'><path d='M19.006 3.705a.75.75 0 00-.512-1.41L6 6.838V3a.75.75 0 00-.75-.75h-1.5A.75.75 0 003 3v4.93l-1.006.365a.75.75 0 00.512 1.41l16.5-6z' /><path fill-rule='evenodd' d='M3.019 11.115L18 5.667V9.09l4.006 1.456a.75.75 0 11-.512 1.41l-.494-.18v8.475h.75a.75.75 0 010 1.5H2.25a.75.75 0 010-1.5H3v-9.129l.019-.006zM18 20.25v-9.565l1.5.545v9.02H18zm-9-6a.75.75 0 00-.75.75v4.5c0 .414.336.75.75.75h3a.75.75 0 00.75-.75V15a.75.75 0 00-.75-.75H9z' clip-rule='evenodd' /></svg></div><div id='qcbutton'><svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='currentColor' class='w-6 h-6' style='color:yellow;width:40px;margin-top:15px'><path d='M11.25 4.533A9.707 9.707 0 006 3a9.735 9.735 0 00-3.25.555.75.75 0 00-.5.707v14.25a.75.75 0 001 .707A8.237 8.237 0 016 18.75c1.995 0 3.823.707 5.25 1.886V4.533zM12.75 20.636A8.214 8.214 0 0118 18.75c.966 0 1.89.166 2.75.47a.75.75 0 001-.708V4.262a.75.75 0 00-.5-.707A9.735 9.735 0 0018 3a9.707 9.707 0 00-5.25 1.533v16.103z' /></svg></div><div id='qcbutton'><svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='currentColor' class='w-6 h-6' style='color:yellow;width:40px;margin-top:15px'><path fill-rule='evenodd' d='M19.952 1.651a.75.75 0 01.298.599V16.303a3 3 0 01-2.176 2.884l-1.32.377a2.553 2.553 0 11-1.403-4.909l2.311-.66a1.5 1.5 0 001.088-1.442V6.994l-9 2.572v9.737a3 3 0 01-2.176 2.884l-1.32.377a2.553 2.553 0 11-1.402-4.909l2.31-.66a1.5 1.5 0 001.088-1.442V9.017 5.25a.75.75 0 01.544-.721l10.5-3a.75.75 0 01.658.122z' clip-rule='evenodd' /></svg></div><div id='qcbutton'><svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='currentColor' class='w-6 h-6' style='color:yellow;width:40px;margin-top:15px'><path fill-rule='evenodd' d='M20.599 1.5c-.376 0-.743.111-1.055.32l-5.08 3.385a18.747 18.747 0 00-3.471 2.987 10.04 10.04 0 014.815 4.815 18.748 18.748 0 002.987-3.472l3.386-5.079A1.902 1.902 0 0020.599 1.5zm-8.3 14.025a18.76 18.76 0 001.896-1.207 8.026 8.026 0 00-4.513-4.513A18.75 18.75 0 008.475 11.7l-.278.5a5.26 5.26 0 013.601 3.602l.502-.278zM6.75 13.5A3.75 3.75 0 003 17.25a1.5 1.5 0 01-1.601 1.497.75.75 0 00-.7 1.123 5.25 5.25 0 009.8-2.62 3.75 3.75 0 00-3.75-3.75z' clip-rule='evenodd' /></svg></div><div id='qcbutton'><svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='currentColor' class='w-6 h-6' style='color:yellow;width:40px;margin-top:15px'><path fill-rule='evenodd' d='M4.5 12a1.5 1.5 0 113 0 1.5 1.5 0 01-3 0zm6 0a1.5 1.5 0 113 0 1.5 1.5 0 01-3 0zm6 0a1.5 1.5 0 113 0 1.5 1.5 0 01-3 0z' clip-rule='evenodd' /></svg></div></div></div>";
+                    $("body").append(categories);
+					}
+			getData();
+			
+        }
+		function getData(){
+			search = document.getElementById("search").value;
+			
 			if(reachedMax){
 			return;
 			}
@@ -204,30 +187,42 @@
                   data: {
                     type: "home",
 					start: start,
-					limit: limit
+					limit: limit,
+					search:search
                   },
                   ContentType: "application/json",
                   success: function(response) {
                     document.getElementById("loading").classList.add('hiddenLoading');
-					
+					document.getElementById("darkscreen").classList.add('hiddenLoading');
 					if(response.r == "reachedMax"){
 						reachedMax = true;
 					}
 					else{
                     var len = response.length;
-                    for (var i = 0; i < len; i++) {
+					
+					for (var i = 0; i < len; i++) {
                       //var id = response[i].id;
                       var name = response[i].name;
                       var price = response[i].price;
                       var image = response[i].image;
-                      var tr_str = " <div id = 'article1'> "+image+" <div id = 'article1-top'> <h1> "+name+" </h1> <p> 200.000 km - Sarajevo </p> </div> <div id = 'article1-bottom' > <span> "+price+" KM </span> </div> </div>";
+                      var tr_str = " <div class = 'article1'> "+image+" <div id = 'article1-top'> <h1> "+name+" </h1> <p> 200.000 km - Sarajevo </p> </div> <div id = 'article1-bottom' > <span> "+price+" KM </span> </div> </div>";
                       $("body").append(tr_str);
+					  
                     }
 					start+=limit;
-                    }}
+                    }},
+					error: function(){
+					getData();
+					}
                   });
 			}
 			}
+        $(document).ready(function() {
+			var categories = "<div id='quickcategory'><span >Brzi odabir kategorija:</span><div id='qcbottomcontainer'><div id='qcbutton'><svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='currentColor' class='w-6 h-6' style='color:yellow;width:40px;margin-top:15px'><path d='M3.375 4.5C2.339 4.5 1.5 5.34 1.5 6.375V13.5h12V6.375c0-1.036-.84-1.875-1.875-1.875h-8.25zM13.5 15h-12v2.625c0 1.035.84 1.875 1.875 1.875h.375a3 3 0 116 0h3a.75.75 0 00.75-.75V15z' /><path d='M8.25 19.5a1.5 1.5 0 10-3 0 1.5 1.5 0 003 0zM15.75 6.75a.75.75 0 00-.75.75v11.25c0 .087.015.17.042.248a3 3 0 015.958.464c.853-.175 1.522-.935 1.464-1.883a18.659 18.659 0 00-3.732-10.104 1.837 1.837 0 00-1.47-.725H15.75z' /><path d='M19.5 19.5a1.5 1.5 0 10-3 0 1.5 1.5 0 003 0z' /></svg></div><div id='qcbutton'><svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='currentColor' class='w-6 h-6' style='color:yellow;width:40px;margin-top:15px'><path fill-rule='evenodd' d='M2.25 5.25a3 3 0 013-3h13.5a3 3 0 013 3V15a3 3 0 01-3 3h-3v.257c0 .597.237 1.17.659 1.591l.621.622a.75.75 0 01-.53 1.28h-9a.75.75 0 01-.53-1.28l.621-.622a2.25 2.25 0 00.659-1.59V18h-3a3 3 0 01-3-3V5.25zm1.5 0v7.5a1.5 1.5 0 001.5 1.5h13.5a1.5 1.5 0 001.5-1.5v-7.5a1.5 1.5 0 00-1.5-1.5H5.25a1.5 1.5 0 00-1.5 1.5z' clip-rule='evenodd' /></svg></div><div id='qcbutton'><svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='currentColor' class='w-6 h-6' style='color:yellow;width:40px;margin-top:15px'><path d='M10.5 18.75a.75.75 0 000 1.5h3a.75.75 0 000-1.5h-3z' /><path fill-rule='evenodd' d='M8.625.75A3.375 3.375 0 005.25 4.125v15.75a3.375 3.375 0 003.375 3.375h6.75a3.375 3.375 0 003.375-3.375V4.125A3.375 3.375 0 0015.375.75h-6.75zM7.5 4.125C7.5 3.504 8.004 3 8.625 3H9.75v.375c0 .621.504 1.125 1.125 1.125h2.25c.621 0 1.125-.504 1.125-1.125V3h1.125c.621 0 1.125.504 1.125 1.125v15.75c0 .621-.504 1.125-1.125 1.125h-6.75A1.125 1.125 0 017.5 19.875V4.125z' clip-rule='evenodd' /></svg></div><div id='qcbutton'><svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='currentColor' class='w-6 h-6' style='color:yellow;width:40px;margin-top:15px'><path d='M19.006 3.705a.75.75 0 00-.512-1.41L6 6.838V3a.75.75 0 00-.75-.75h-1.5A.75.75 0 003 3v4.93l-1.006.365a.75.75 0 00.512 1.41l16.5-6z' /><path fill-rule='evenodd' d='M3.019 11.115L18 5.667V9.09l4.006 1.456a.75.75 0 11-.512 1.41l-.494-.18v8.475h.75a.75.75 0 010 1.5H2.25a.75.75 0 010-1.5H3v-9.129l.019-.006zM18 20.25v-9.565l1.5.545v9.02H18zm-9-6a.75.75 0 00-.75.75v4.5c0 .414.336.75.75.75h3a.75.75 0 00.75-.75V15a.75.75 0 00-.75-.75H9z' clip-rule='evenodd' /></svg></div><div id='qcbutton'><svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='currentColor' class='w-6 h-6' style='color:yellow;width:40px;margin-top:15px'><path d='M11.25 4.533A9.707 9.707 0 006 3a9.735 9.735 0 00-3.25.555.75.75 0 00-.5.707v14.25a.75.75 0 001 .707A8.237 8.237 0 016 18.75c1.995 0 3.823.707 5.25 1.886V4.533zM12.75 20.636A8.214 8.214 0 0118 18.75c.966 0 1.89.166 2.75.47a.75.75 0 001-.708V4.262a.75.75 0 00-.5-.707A9.735 9.735 0 0018 3a9.707 9.707 0 00-5.25 1.533v16.103z' /></svg></div><div id='qcbutton'><svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='currentColor' class='w-6 h-6' style='color:yellow;width:40px;margin-top:15px'><path fill-rule='evenodd' d='M19.952 1.651a.75.75 0 01.298.599V16.303a3 3 0 01-2.176 2.884l-1.32.377a2.553 2.553 0 11-1.403-4.909l2.311-.66a1.5 1.5 0 001.088-1.442V6.994l-9 2.572v9.737a3 3 0 01-2.176 2.884l-1.32.377a2.553 2.553 0 11-1.402-4.909l2.31-.66a1.5 1.5 0 001.088-1.442V9.017 5.25a.75.75 0 01.544-.721l10.5-3a.75.75 0 01.658.122z' clip-rule='evenodd' /></svg></div><div id='qcbutton'><svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='currentColor' class='w-6 h-6' style='color:yellow;width:40px;margin-top:15px'><path fill-rule='evenodd' d='M20.599 1.5c-.376 0-.743.111-1.055.32l-5.08 3.385a18.747 18.747 0 00-3.471 2.987 10.04 10.04 0 014.815 4.815 18.748 18.748 0 002.987-3.472l3.386-5.079A1.902 1.902 0 0020.599 1.5zm-8.3 14.025a18.76 18.76 0 001.896-1.207 8.026 8.026 0 00-4.513-4.513A18.75 18.75 0 008.475 11.7l-.278.5a5.26 5.26 0 013.601 3.602l.502-.278zM6.75 13.5A3.75 3.75 0 003 17.25a1.5 1.5 0 01-1.601 1.497.75.75 0 00-.7 1.123 5.25 5.25 0 009.8-2.62 3.75 3.75 0 00-3.75-3.75z' clip-rule='evenodd' /></svg></div><div id='qcbutton'><svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='currentColor' class='w-6 h-6' style='color:yellow;width:40px;margin-top:15px'><path fill-rule='evenodd' d='M4.5 12a1.5 1.5 0 113 0 1.5 1.5 0 01-3 0zm6 0a1.5 1.5 0 113 0 1.5 1.5 0 01-3 0zm6 0a1.5 1.5 0 113 0 1.5 1.5 0 01-3 0z' clip-rule='evenodd' /></svg></div></div></div>";
+                    $("body").append(categories);
+              getData();
+        });
+			
             var name = sessionStorage.getItem("username");
             if (name != "null") {
               document.getElementById("profile-name-text").innerHTML = name;

@@ -116,27 +116,27 @@
     <main>
       <!-- CREATE ARTICLE -->
       <form>
-        <div id="article1" style="height:50px">
+        <div class="article1" style="height:50px">
           <span style="display:block;text-align:center;padding-top:15px;">Kreiranje novog artikla</span>
         </div>
-        <div id="article1">
+        <div class="article1">
           <label style="position:relative;top:10px;left:5px;font-size:17px">Naziv artikla:</label>
           <br>
           <input name="naziv" style="position:relative;top:20px;left:5px;height:45px;width:calc(100% - 15px);border-radius:5px;background-color:black;color:white;font-size:17px" id="naziv">
         </div>
-        <div id="article1">
+        <div class="article1">
           <label style="position:relative;top:10px;left:5px;font-size:17px">Kategorija:</label>
           <br>
           <select name="kategorija" style="position:relative;top:20px;left:5px;height:45px;width:calc(100% - 15px);border-radius:5px;background-color:black;color:white;font-size:17px" id="username">
             <option>Automobili</option>
           </select>
         </div>
-        <div id="article1" style="height:170px">
+        <div class="article1" style="height:170px">
           <label style="position:relative;top:10px;left:5px;font-size:17px">Opis:</label>
           <br>
           <textarea name="opis" style="position:relative;top:20px;left:5px;height:110px;width:calc(100% - 15px);border-radius:5px;background-color:black;color:white;font-size:17px" id="username"></textarea>
         </div>
-        <div id="article1" style="height:170px">
+        <div class="article1" style="height:170px">
           <label for="imageFileUpload" style="z-index:54;position:absolute;width:calc(100% - 80px);height:170px;"></label>
           <div>
             <div style="display:inline-block;float:left;background-color:black;position:relative;top:20px;left:5px;height:140px;width:calc(100% - 220px);border-radius:5px 0 0 5px;background-color:black;color:white;font-size:17px">Fotografija:</div>
@@ -146,18 +146,18 @@
           <img src="img/logo/logov2.png" id="output" style="border-radius:0;background-color:black;display:inline-block;height:140px;width:210px;float:right;object-fit: cover;margin-right:5px;" />
           <input name="image" onchange="loadFile(event)" name="image" style="position:absolute;opacity:0;" id="imageFileUpload" type="file">
         </div>
-        <div id="article1">
+        <div class="article1">
           <label style="position:relative;top:10px;left:5px;font-size:17px">Lokacija:</label>
           <br>
           <input name="lokacija" style="position:relative;top:20px;left:5px;height:45px;width:calc(100% - 15px);border-radius:5px;background-color:black;color:white;font-size:17px" id="username">
         </div>
-        <div id="article1">
+        <div class="article1">
           <label style="position:relative;top:10px;left:5px;font-size:17px">Cijena:</label>
           <br>
           <input name="cijena" style="position:relative;top:20px;left:5px;height:45px;width:calc(100% - 15px);border-radius:5px;background-color:black;color:white;font-size:17px" id="cijena">
         </div>
-        <div id="article1" style="height:50px;scroll-snap-align:start;">
-          <button style="display:block;text-align:center;padding-top:15px;background-color:black;color:white;height:100%;width:100%;border-radius:5px;" id="submit" type="submit" name="submit">
+        <div class="article1" style="height:70px;scroll-snap-align:start;">
+          <button style="display:block;text-align:center;background-color:black;color:white;height:100%;width:100%;border-radius:5px;" id="submit" type="submit" name="submit">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6" height="20px">
               <path d="M3.478 2.405a.75.75 0 00-.926.94l2.432 7.905H13.5a.75.75 0 010 1.5H4.984l-2.432 7.905a.75.75 0 00.926.94 60.519 60.519 0 0018.445-8.986.75.75 0 000-1.218A60.517 60.517 0 003.478 2.405z" />
             </svg>
@@ -165,12 +165,7 @@
         </div>
       </form>
       <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
+
     </main>
     <script type="text/javascript" src="cordova.js"></script>
     <script type="text/javascript" src="js/index.js"></script>

@@ -33,10 +33,10 @@
 
 #loading{
 	position:fixed;
-	z-index:1;
+	z-index:11;
 	display:block;
-	left:calc(50% - 80px);
-	top:calc(50% - 100px);
+	left:calc(50vw - 80px);
+	top:calc(50vh - 100px);
 	transition:0.3s;
 }
 .hiddenLoading{
@@ -141,7 +141,12 @@ nav{
 	-moz-box-shadow: 0px 2px 5px 1px rgba(186,184,186,1);
 	box-shadow: 0px 2px 5px 1px rgba(186,184,186,1);
 }
-
+textarea:focus, input:focus, input, button{
+    outline: none;
+	border:0;
+	-webkit-box-shadow: none;
+  box-shadow: none;
+}
 #searchbar{
 	top:0;
 	padding:0;
@@ -155,7 +160,9 @@ nav{
 	border-radius:10px;
 	color:white;
 	text-align:center;
-	
+	box-shadow: 1px 7px 17px -9px rgba(0,0,0,0.75);
+-webkit-box-shadow: 1px 7px 17px -9px rgba(0,0,0,0.75);
+-moz-box-shadow: 1px 7px 17px -9px rgba(0,0,0,0.75);
 }
 #name{
 	position:fixed;
@@ -191,7 +198,7 @@ main{
 	height:calc(100% - 100px);
 	margin-top:100px;
 }
-#article1{
+.article1{
 	width:94%;
 	margin-left:3%;
 	height:100px;
@@ -236,7 +243,7 @@ main{
 	border-radius:50%;
 }
 
-#article1 img{
+.article1 img{
 	display:inline-block;
 	float:left;
 	border-radius:5px 0 0 5px;
