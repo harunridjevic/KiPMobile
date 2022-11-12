@@ -63,6 +63,7 @@ nav{
 #logo{
 	display:block;
 	margin-top:-2px;
+	transition:0.3s;
 }
 
 #arrow{
@@ -163,6 +164,7 @@ textarea:focus, input:focus, input, button{
 	box-shadow: 1px 7px 17px -9px rgba(0,0,0,0.75);
 -webkit-box-shadow: 1px 7px 17px -9px rgba(0,0,0,0.75);
 -moz-box-shadow: 1px 7px 17px -9px rgba(0,0,0,0.75);
+transition:0.3s;
 }
 #name{
 	position:fixed;
@@ -241,6 +243,13 @@ main{
 	width:70px;
 	height:70px;
 	border-radius:50%;
+	color:yellow;
+	transition:0.3s;
+}
+
+#qcbutton:active{
+	background-color:white;
+	color:black;
 }
 
 .article1 img{
@@ -278,4 +287,15 @@ main{
 }
 #article1-bottom span{
 	top:10px;
+}
+
+#bottom-navigation{
+	position:fixed;
+	height:55px;
+	background-color:rgba(0,0,0,0.8);
+	bottom:5px;
+	width:94%;
+	left:3%;
+	border-radius:5px;
+	transition:0.3s;
 }
