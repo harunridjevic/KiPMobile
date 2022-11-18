@@ -128,7 +128,7 @@
 	  var limit = 1000;
 	  var reachedMax = false;
 	  var search = "clio";
-	  
+	  var kategorija = "";
 	  //weird is used in search so that the articles won't get doubled
 	  var weird = false;
 		
@@ -170,17 +170,9 @@
         $("#searchbtn").click();
     }
 });
-		$(window).scroll(function(){
-			if($(window).scrollTop()==$(document).height()-$(window).height()){
-			if(weird == 1){
-			weird = 0;
-			}
-			else
-				getData();
-			   }
-		});
+		
 		function searchup(){
-		weird = 1;
+		kategorija = "";
 		document.getElementById("searchbtn").disabled = "true";
 		setTimeout(function() {document.getElementById("searchbtn").disabled = false;}, 2000);
 		const boxes = document.querySelectorAll('.article1');
@@ -189,7 +181,7 @@
 						  box.remove();
 						});
 		start = 0;
-			   limit = 6;
+			   limit = 1000;
 			   reachedMax = false;
 		document.getElementById("loading").classList.remove('hiddenLoading');
 		document.getElementById("darkscreen").classList.remove('hiddenLoading');
@@ -210,14 +202,15 @@
 			}
 			else{
 				$.ajax({
-                  url: "http://kipba.atwebpages.com/api.php",
+                  url: "http://kipmobile.onlinewebshop.net/api.php",
                   type: "GET",
                   dataType: "json",
                   data: {
                     type: "home",
 					start: start,
 					limit: limit,
-					search:search
+					search:search,
+					category:kategorija
                   },
                   ContentType: "application/json",
                   success: function(response) {
@@ -239,10 +232,7 @@
 					  
                     }
 					start+=limit;
-                    }},
-					error: function(){
-					getData();
-					}
+                    }}
                   });
 			}
 			}
@@ -258,7 +248,46 @@
             }
 			//category buttons
 			function categorySearch(category){
-			
+				const boxes = document.querySelectorAll('.article1');
+				if(boxes != null){
+						boxes.forEach(box => {
+						  box.remove();
+						});
+				}
+				switch(category){
+					case 1:
+						kategorija = "automobili";
+						getData();
+					break;
+					case 2:
+						kategorija = "racunari";
+						getData();
+					break;
+					case 3:
+						kategorija = "telefoni";
+						getData();
+					break;
+					case 4:
+						kategorija = "nekretnine";
+						getData();
+					break;
+					case 5:
+						kategorija = "knjige";
+						getData();
+					break;
+					case 6:
+						kategorija = "muzickiInstrumenti";
+						getData();
+					break;
+					case 7:
+						kategorija = "umjetnickeSlike";
+						getData();
+					break;
+					case 8:
+						kategorija = "ostalo";
+						getData();
+					break;
+				}
 			}
       </script>
 	<div id="bottom-navigation">

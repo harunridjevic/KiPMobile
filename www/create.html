@@ -128,7 +128,14 @@
           <label style="position:relative;top:10px;left:5px;font-size:17px">Kategorija:</label>
           <br>
           <select name="kategorija" style="position:relative;top:20px;left:5px;height:45px;width:calc(100% - 15px);border-radius:5px;background-color:black;color:white;font-size:17px" id="username">
-            <option>Automobili</option>
+            <option value="automobili">Automobili</option>
+			<option value="racunari">Racunari/Laptopi</option>
+			<option value="telefoni">Telefoni</option>
+			<option value="nekretnine">Nekretnine</option>
+			<option value="knjige">Knjige</option>
+			<option value="muzickiInstrumenti">Muzicki instrumenti</option>
+			<option value="umjetnickeSlike">Umjetnicke slike</option>
+			<option value="ostalo">Ostalo</option>
           </select>
         </div>
         <div class="article1" style="height:170px">
@@ -191,7 +198,7 @@
             form_data.append('file', file_data);
             $.ajax({
               type: 'post',
-              url: 'http://kipba.atwebpages.com/api.php',
+              url: 'http://kipmobile.onlinewebshop.net/api.php',
               data: form_data,
               dataType: 'text', // <-- what to expect back from the PHP script, if anything
               cache: false,

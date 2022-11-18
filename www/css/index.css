@@ -63,7 +63,7 @@ nav{
 #logo{
 	display:block;
 	margin-top:-2px;
-	transition:0.3s;
+	transition:0.5s;
 }
 
 #arrow{
@@ -164,7 +164,7 @@ textarea:focus, input:focus, input, button{
 	box-shadow: 1px 7px 17px -9px rgba(0,0,0,0.75);
 -webkit-box-shadow: 1px 7px 17px -9px rgba(0,0,0,0.75);
 -moz-box-shadow: 1px 7px 17px -9px rgba(0,0,0,0.75);
-transition:0.3s;
+transition:0.4s;
 }
 #name{
 	position:fixed;
@@ -175,7 +175,7 @@ transition:0.3s;
 	background-color:black;
 	margin-left:150px;
 	border-radius:10px;
-	transition:0.2s;
+	transition:0.5s;
 }
 
 #name h1,#name svg{
@@ -298,4 +298,5 @@ main{
 	left:3%;
 	border-radius:5px;
 	transition:0.3s;
+	
 }
