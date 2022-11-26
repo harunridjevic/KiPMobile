@@ -38,6 +38,71 @@
     <link rel="stylesheet" type="text/css" href="css/index.css">
     <title>KiP.ba</title>
   </head>
+  <style>
+		#div1{
+			top:0;
+			left:0;
+			position:fixed;
+			width:100%;
+			height:100%;
+			transition:0.5s;
+			opacity:1;
+		}
+		#div2{
+			top:0;
+			right:0;
+			position:fixed;
+			width:0;
+			height:100%;
+			transition:0.5s;
+			opacity:0;
+		}
+		#div3{
+			top:0;
+			right:0;
+			position:fixed;
+			width:0;
+			height:100%;
+			transition:0.5s;
+			opacity:0;
+		}
+		#div4{
+			top:0;
+			right:0;
+			position:fixed;
+			width:0;
+			height:100%;
+			transition:0.5s;
+			opacity:0;
+		}
+		#div5{
+			top:0;
+			right:0;
+			position:fixed;
+			width:0;
+			height:100%;
+			transition:0.5s;
+			opacity:0;
+		}
+		#div6{
+			top:0;
+			right:0;
+			position:fixed;
+			width:0;
+			height:100%;
+			transition:0.5s;
+			opacity:0;
+		}
+		#div7{
+			top:0;
+			right:0;
+			position:fixed;
+			width:0;
+			height:100%;
+			transition:0.5s;
+			opacity:0;
+		}
+	</style>
   <body>
     <!--NAVBAR-->
     <nav style="cursor: pointer;" id="nav">
@@ -109,13 +174,153 @@
       </div>
     </nav>
     <div id="searchbar">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" style="width:30px;margin-top:65px;">
+      
+	  
+		<input placeholder =" Pretrazi KiP..." id="search" style="position:absolute;top:63px;height:30px;width:calc(100% - 100px);left:20px;font-size:15px;color:white;background-color:black;">
+		<button onclick="searchup()" id="searchbtn" style="position:absolute;top:63px;height:35px;width:55px;right:20px;background-color:yellow;border-radius:5px" ><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" style="width:30px">
         <path fill-rule="evenodd" d="M10.5 3.75a6.75 6.75 0 100 13.5 6.75 6.75 0 000-13.5zM2.25 10.5a8.25 8.25 0 1114.59 5.28l4.69 4.69a.75.75 0 11-1.06 1.06l-4.69-4.69A8.25 8.25 0 012.25 10.5z" clip-rule="evenodd" />
-      </svg>
+      </svg></button>
+	  
     </div>
+    
     <main>
       <!-- CREATE ARTICLE -->
-      <form>
+	  <form>
+		<div id="div1">
+		<br><br><br><br><br><br><br>
+		<div class="create-nav">
+			<div onclick="next(div1,div2)" class="create-nav-right">
+			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6" height="20px" style="margin-top:25px">
+              <path d="M3.478 2.405a.75.75 0 00-.926.94l2.432 7.905H13.5a.75.75 0 010 1.5H4.984l-2.432 7.905a.75.75 0 00.926.94 60.519 60.519 0 0018.445-8.986.75.75 0 000-1.218A60.517 60.517 0 003.478 2.405z" />
+            </svg>
+			</div>
+		</div>
+			<div class="article1" style="margin-top:calc(50vh - 200px)">
+          <label style="position:relative;top:10px;left:5px;font-size:17px">Naziv artikla:</label>
+          <br>
+          <input name="naziv" style="position:relative;top:20px;left:5px;height:45px;width:calc(100% - 15px);border-radius:5px;background-color:black;color:white;font-size:17px" id="naziv">
+        </div>
+		</div>
+		<div id="div2">
+		<br><br><br><br><br><br><br>
+		<div class="create-nav">
+		<div onclick="next(div2,div3)" class="create-nav-right"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6" height="20px" style="margin-top:25px">
+              <path d="M3.478 2.405a.75.75 0 00-.926.94l2.432 7.905H13.5a.75.75 0 010 1.5H4.984l-2.432 7.905a.75.75 0 00.926.94 60.519 60.519 0 0018.445-8.986.75.75 0 000-1.218A60.517 60.517 0 003.478 2.405z" />
+            </svg></div>
+		<div onclick="back(div2,div1)" class="create-nav-left">
+		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6" height="20px" style="margin-top:25px;transform:scale(-1,1);">
+              <path d="M3.478 2.405a.75.75 0 00-.926.94l2.432 7.905H13.5a.75.75 0 010 1.5H4.984l-2.432 7.905a.75.75 0 00.926.94 60.519 60.519 0 0018.445-8.986.75.75 0 000-1.218A60.517 60.517 0 003.478 2.405z" />
+            </svg>
+		</div>
+		</div>
+		<div class="article1" style="margin-top:calc(50vh - 200px)">
+          <label style="position:relative;top:10px;left:5px;font-size:17px">Kratki opis:</label>
+          <br>
+          <input name="kratki_opis" style="position:relative;top:20px;left:5px;height:45px;width:calc(100% - 15px);border-radius:5px;background-color:black;color:white;font-size:17px" id="naziv">
+        </div>
+		</div>
+		<div id="div3">
+		<br><br><br><br><br><br><br>
+		<div class="create-nav">
+		<div onclick="next(div3,div4)" class="create-nav-right"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6" height="20px" style="margin-top:25px">
+              <path d="M3.478 2.405a.75.75 0 00-.926.94l2.432 7.905H13.5a.75.75 0 010 1.5H4.984l-2.432 7.905a.75.75 0 00.926.94 60.519 60.519 0 0018.445-8.986.75.75 0 000-1.218A60.517 60.517 0 003.478 2.405z" />
+            </svg></div>
+		<div onclick="back(div3,div2)" class="create-nav-left"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6" height="20px" style="margin-top:25px;transform:scale(-1,1);">
+              <path d="M3.478 2.405a.75.75 0 00-.926.94l2.432 7.905H13.5a.75.75 0 010 1.5H4.984l-2.432 7.905a.75.75 0 00.926.94 60.519 60.519 0 0018.445-8.986.75.75 0 000-1.218A60.517 60.517 0 003.478 2.405z" />
+            </svg></div>
+		</div>
+		<div class="article1" style="margin-top:calc(50vh - 200px)">
+          <label style="position:relative;top:10px;left:5px;font-size:17px">Kategorija:</label>
+          <br>
+          <select name="kategorija" style="position:relative;top:20px;left:5px;height:45px;width:calc(100% - 15px);border-radius:5px;background-color:black;color:white;font-size:17px" id="username">
+            <option value="automobili">Automobili</option>
+			<option value="racunari">Racunari/Laptopi</option>
+			<option value="telefoni">Telefoni</option>
+			<option value="nekretnine">Nekretnine</option>
+			<option value="knjige">Knjige</option>
+			<option value="instrumenti">Muzicki instrumenti</option>
+			<option value="slike">Umjetnicke slike</option>
+			<option value="ostalo">Ostalo</option>
+          </select>
+        </div>
+		</div>
+		<div id="div4">
+		<br><br><br><br><br><br><br>
+		<div class="create-nav">
+		<div onclick="next(div4,div5)" class="create-nav-right"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6" height="20px" style="margin-top:25px">
+              <path d="M3.478 2.405a.75.75 0 00-.926.94l2.432 7.905H13.5a.75.75 0 010 1.5H4.984l-2.432 7.905a.75.75 0 00.926.94 60.519 60.519 0 0018.445-8.986.75.75 0 000-1.218A60.517 60.517 0 003.478 2.405z" />
+            </svg></div>
+		<div onclick="back(div4,div3)" class="create-nav-left"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6" height="20px" style="margin-top:25px;transform:scale(-1,1);">
+              <path d="M3.478 2.405a.75.75 0 00-.926.94l2.432 7.905H13.5a.75.75 0 010 1.5H4.984l-2.432 7.905a.75.75 0 00.926.94 60.519 60.519 0 0018.445-8.986.75.75 0 000-1.218A60.517 60.517 0 003.478 2.405z" />
+            </svg></div>
+		</div>
+		<div class="article1" style="height:170px; margin-top:calc(50vh - 250px)">
+          <label style="position:relative;top:10px;left:5px;font-size:17px">Opis:</label>
+          <br>
+          <textarea name="opis" style="position:relative;top:20px;left:5px;height:110px;width:calc(100% - 15px);border-radius:5px;background-color:black;color:white;font-size:17px" id="username"></textarea>
+        </div>
+		</div>
+		<div id="div5">
+		<br><br><br><br><br><br><br>
+		<div class="create-nav" >
+		<div onclick="next(div5,div6)" class="create-nav-right"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6" height="20px" style="margin-top:25px">
+              <path d="M3.478 2.405a.75.75 0 00-.926.94l2.432 7.905H13.5a.75.75 0 010 1.5H4.984l-2.432 7.905a.75.75 0 00.926.94 60.519 60.519 0 0018.445-8.986.75.75 0 000-1.218A60.517 60.517 0 003.478 2.405z" />
+            </svg></div>
+		<div onclick="back(div5,div4)" class="create-nav-left"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6" height="20px" style="margin-top:25px;transform:scale(-1,1);">
+              <path d="M3.478 2.405a.75.75 0 00-.926.94l2.432 7.905H13.5a.75.75 0 010 1.5H4.984l-2.432 7.905a.75.75 0 00.926.94 60.519 60.519 0 0018.445-8.986.75.75 0 000-1.218A60.517 60.517 0 003.478 2.405z" />
+            </svg></div>
+		</div>
+		<div class="article1" style="height:170px" >
+          <label for="imageFileUpload" style="z-index:54;position:absolute;width:calc(100% - 80px);height:170px;"></label>
+          <div style="margin-top:calc(50vh - 250px)">
+            <div style="display:inline-block;float:left;background-color:black;position:relative;top:20px;left:5px;height:140px;width:calc(100% - 220px);border-radius:5px 0 0 5px;background-color:black;color:white;font-size:17px">Fotografija:</div>
+          </div>
+          <br>
+          <label for="imageFileUpload"></label>
+          <img src="img/logo/logov2.png" id="output" style="border-radius:0;background-color:black;display:inline-block;height:140px;width:210px;float:right;object-fit: cover;margin-right:5px;" />
+          <input name="image" onchange="loadFile(event)" name="image" style="position:absolute;opacity:0;" id="imageFileUpload" type="file">
+        </div>
+		</div>
+		<div id="div6">
+		<br><br><br><br><br><br><br>
+		<div class="create-nav">
+		<div onclick="next(div6,div7)" class="create-nav-right"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6" height="20px" style="margin-top:25px">
+              <path d="M3.478 2.405a.75.75 0 00-.926.94l2.432 7.905H13.5a.75.75 0 010 1.5H4.984l-2.432 7.905a.75.75 0 00.926.94 60.519 60.519 0 0018.445-8.986.75.75 0 000-1.218A60.517 60.517 0 003.478 2.405z" />
+            </svg></div>
+		<div onclick="back(div6,div5)" class="create-nav-left"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6" height="20px" style="margin-top:25px;transform:scale(-1,1);">
+              <path d="M3.478 2.405a.75.75 0 00-.926.94l2.432 7.905H13.5a.75.75 0 010 1.5H4.984l-2.432 7.905a.75.75 0 00.926.94 60.519 60.519 0 0018.445-8.986.75.75 0 000-1.218A60.517 60.517 0 003.478 2.405z" />
+            </svg></div>
+		</div>
+		<div class="article1" style="margin-top:calc(50vh - 200px)">
+          <label style="position:relative;top:10px;left:5px;font-size:17px">Lokacija:</label>
+          <br>
+          <input name="lokacija" style="position:relative;top:20px;left:5px;height:45px;width:calc(100% - 15px);border-radius:5px;background-color:black;color:white;font-size:17px" id="username">
+        </div>
+		</div>
+		<div id="div7">
+		<br><br><br><br><br><br><br>
+		<div class="create-nav">
+		<div onclick="back(div7,div6)"class="create-nav-left"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6" height="20px" style="margin-top:25px;transform:scale(-1,1);">
+              <path d="M3.478 2.405a.75.75 0 00-.926.94l2.432 7.905H13.5a.75.75 0 010 1.5H4.984l-2.432 7.905a.75.75 0 00.926.94 60.519 60.519 0 0018.445-8.986.75.75 0 000-1.218A60.517 60.517 0 003.478 2.405z" />
+            </svg></div>
+		<div class="article1 create-nav-right" style="height:70px;scroll-snap-align:start;">
+          <button style="display:block;text-align:center;background-color:black;color:white;height:100%;width:100%;border-radius:5px;" id="submit" type="submit" name="submit">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6" height="20px">
+              <path d="M3.478 2.405a.75.75 0 00-.926.94l2.432 7.905H13.5a.75.75 0 010 1.5H4.984l-2.432 7.905a.75.75 0 00.926.94 60.519 60.519 0 0018.445-8.986.75.75 0 000-1.218A60.517 60.517 0 003.478 2.405z" />
+            </svg>
+          </button>
+        </div>
+		</div>
+		<div class="article1" style="margin-top:calc(50vh - 200px)">
+          <label style="position:relative;top:10px;left:5px;font-size:17px">Cijena:</label>
+          <br>
+          <input name="cijena" style="position:relative;top:20px;left:5px;height:45px;width:calc(100% - 15px);border-radius:5px;background-color:black;color:white;font-size:17px" id="cijena">
+        </div>
+        
+		
+		</div>
+		</form>
+      <!--<form>
         <div class="article1" style="height:50px">
           <span style="display:block;text-align:center;padding-top:15px;">Kreiranje novog artikla</span>
         </div>
@@ -123,6 +328,11 @@
           <label style="position:relative;top:10px;left:5px;font-size:17px">Naziv artikla:</label>
           <br>
           <input name="naziv" style="position:relative;top:20px;left:5px;height:45px;width:calc(100% - 15px);border-radius:5px;background-color:black;color:white;font-size:17px" id="naziv">
+        </div>
+		<div class="article1">
+          <label style="position:relative;top:10px;left:5px;font-size:17px">Kratki opis:</label>
+          <br>
+          <input name="kratki_opis" style="position:relative;top:20px;left:5px;height:45px;width:calc(100% - 15px);border-radius:5px;background-color:black;color:white;font-size:17px" id="naziv">
         </div>
         <div class="article1">
           <label style="position:relative;top:10px;left:5px;font-size:17px">Kategorija:</label>
@@ -133,8 +343,8 @@
 			<option value="telefoni">Telefoni</option>
 			<option value="nekretnine">Nekretnine</option>
 			<option value="knjige">Knjige</option>
-			<option value="muzickiInstrumenti">Muzicki instrumenti</option>
-			<option value="umjetnickeSlike">Umjetnicke slike</option>
+			<option value="instrumenti">Muzicki instrumenti</option>
+			<option value="slike">Umjetnicke slike</option>
 			<option value="ostalo">Ostalo</option>
           </select>
         </div>
@@ -170,13 +380,55 @@
             </svg>
           </button>
         </div>
-      </form>
+      </form>-->
       <br>
 
     </main>
+	<div id="bottom-navigation">
+		<div class="tab-changer">1</div>
+		<div class="tab-changer">2</div>
+		<div class="back-button" onclick="backbutton()" id="backbutton" style="float:right">
+			<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" style="width:40px">
+				<path stroke-linecap="round" stroke-linejoin="round" d="M9 15L3 9m0 0l6-6M3 9h12a6 6 0 010 12h-3" />
+			</svg>
+		</div>
+	</div>
     <script type="text/javascript" src="cordova.js"></script>
     <script type="text/javascript" src="js/index.js"></script>
     <script>
+	function next(curr,next){
+			var div1 = document.getElementById("div1");
+			var div2 = document.getElementById("div2");
+			var div3 = document.getElementById("div3");
+			var div4 = document.getElementById("div4");
+			var div5 = document.getElementById("div5");
+			var div6 = document.getElementById("div6");
+			var div7 = document.getElementById("div7");
+			curr.style.left = "0";
+			curr.style.width = "0";
+			curr.style.opacity = "0";
+			next.style.right = "0";
+			next.style.width = "100%";
+			next.style.opacity = "1";
+			
+		}
+		function back(curr,next){
+			var div1 = document.getElementById("div1");
+			var div2 = document.getElementById("div2");
+			var div3 = document.getElementById("div3");
+			var div4 = document.getElementById("div4");
+			var div5 = document.getElementById("div5");
+			var div6 = document.getElementById("div6");
+			var div7 = document.getElementById("div7");
+			curr.style.left = "";
+			curr.style.right = "0";
+			curr.style.opacity = "0";
+			curr.style.width = "0";
+			next.style.left = "0";
+			next.style.width = "100%";
+			next.style.opacity = "1";
+		}
+		
 	  function goToLogin() {
           window.location.href = "login.html";
         }
@@ -211,6 +463,10 @@
           }
         });
       });
+	  
+	  function backbutton(){
+			window.location.href = "index.html";
+	  }
     </script>
   </body>
 </html>

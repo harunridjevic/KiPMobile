@@ -36,7 +36,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@600&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="css/index.css">
-    <title>KiP.ba</title>
+    <link rel="stylesheet" href="view_article.css">
+	<title>KiP.ba</title>
   </head>
   <body style="padding-top:100px">
     <img src="video/1.gif" height="150px" id="loading">
@@ -123,12 +124,113 @@
     </div>
     
       <!-- ARTICLES -->
-      <script>
+		<!--MODAL-->
+		<div id="black-background" class="hidden"></div>
+		<div id="view_modal" class="hidden">
+			<div class="view_modal_title"><span id="view_modal_title"style="font-size:23px;position:absolute;top:20px;display:block;width:100%;text-align:center;">Megane</span></div>
+			<img class="view_modal_image" src="d">
+			<div class="view_modal_tabs">
+				<div class="view_modal_tab" onclick="view_modal_tab('view_modal_tab_info')">Info:</div>
+				<div class="view_modal_tab" onclick="view_modal_tab('view_modal_tab_opis')">Opis:</div>
+				<div class="view_modal_tab" onclick="view_modal_tab('view_modal_tab_kontakt')">Kontakt:</div>
+				<div class="view_modal_tab" onclick="view_modal_tab('view_modal_tab_cijena')">Cijena:</div>
+			</div>
+			<div id="view_modal_tab_info">
+				<div class="view_modal_info" id="view_modal_info_kratkiopis">Kratki opis: </div>
+				<div class="view_modal_info" id="view_modal_info_kategorija">Kategorija: </div>
+				<div class="view_modal_info" id="view_modal_info_datum">Datum-objave: </div>
+			</div>
+			<div id="view_modal_tab_opis" class="hidden-tab">
+				<div class="view_modal_opis" id="view_modal_info_opis">Detaljni opis: </div>
+				
+			</div>
+			<div id="view_modal_tab_kontakt" class="hidden-tab">
+				<div class="view_modal_info">Naziv Korisnika: </div>
+				<div class="view_modal_info">Broj telefona: </div>
+				<div class="view_modal_info" id="view_modal_info_lokacija">Lokacija: </div>
+			</div>
+			<div id="view_modal_tab_cijena" class="hidden-tab">
+				<div class="view_modal_info" id="view_modal_cijena">Cijena: </div>
+			</div>
+		</div>
+		
+	<div id="bottom-navigation">
+		<div class="tab-changer">1</div>
+		<div class="tab-changer">2</div>
+		<div class="back-button hide-backbutton" onclick="backbutton()" id="backbutton" style="float:right">
+			<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" style="width:40px">
+				<path stroke-linecap="round" stroke-linejoin="round" d="M9 15L3 9m0 0l6-6M3 9h12a6 6 0 010 12h-3" />
+			</svg>
+		</div>
+	</div>
+	<script>
+		var articleNum = 1;
+		var articles = [];
+		var isModalOpened = 0;
+		var modal = document.getElementById ("view_modal");
+		var blackbackground = document.getElementById ("black-background");
+		var back_button = document.getElementById ("backbutton");
+		
+		function view_modal(id){
+		    var modal_img = document.getElementsByClassName("view_modal_image");
+			var selected_modal = document.getElementById(id);
+			if(isModalOpened){
+				modal.classList.add('hidden');
+				blackbackground.classList.add('hidden');
+				back_button.classList.add('hide-backbutton');
+				
+				isModalOpened = 0;
+			}else{
+				document.getElementById("nav").style.height = "60px";
+				  document.getElementById("bottom-navigation").style.height = "55px";
+				  document.getElementById("searchbar").style.height = "100px";
+				  document.getElementById("logo").style.opacity = "1";
+				  document.getElementById("name").style.opacity = "1";
+				  document.getElementById("arrow").style.opacity = "1";
+				  document.getElementById("searchbar").style.opacity = "1";
+				modal.classList.remove('hidden');
+				blackbackground.classList.remove('hidden');
+				back_button.classList.remove('hide-backbutton');
+				modal_img[0].src = selected_modal.querySelector("img").src;
+				document. getElementById("view_modal_cijena").innerHTML = "Cijena: "+articles[id].price;
+				document. getElementById("view_modal_title").innerHTML = articles[id].name;
+				document. getElementById("view_modal_info_kategorija").innerHTML = "Kategorija: "+articles[id].kategorija;
+				document. getElementById("view_modal_info_datum").innerHTML = "Datum objave: "+articles[id].datumobjave;
+				document. getElementById("view_modal_info_lokacija").innerHTML = "Lokacija: "+articles[id].lokacija;
+				document. getElementById("view_modal_info_kratkiopis").innerHTML = "Kratki opis: "+articles[id].kratki_opis;
+				document. getElementById("view_modal_info_opis").innerHTML = "Kratki opis: "+articles[id].opis;
+				isModalOpened = 1;
+			}
+			
+			
+		}
+		
+		function backbutton(){
+				modal.classList.add('hidden');
+				blackbackground.classList.add('hidden');
+				back_button.classList.add('hide-backbutton');
+				isModalOpened = 0;
+		}
+		
+		function view_modal_tab(name){
+			var info_tab = document.getElementById ("view_modal_tab_info");
+			var opis_tab = document.getElementById ("view_modal_tab_opis");
+			var kontakt_tab = document.getElementById ("view_modal_tab_kontakt");
+			var cijena_tab = document.getElementById ("view_modal_tab_cijena");
+			
+			var selected_tab = document.getElementById (name);
+			info_tab.classList.add('hidden-tab');
+			opis_tab.classList.add('hidden-tab');
+			kontakt_tab.classList.add('hidden-tab');
+			cijena_tab.classList.add('hidden-tab');
+			selected_tab.classList.remove('hidden-tab');
+		}
 	  var start = 0;
 	  var limit = 1000;
 	  var reachedMax = false;
 	  var search = "clio";
 	  var kategorija = "";
+	  
 	  //weird is used in search so that the articles won't get doubled
 	  var weird = false;
 		
@@ -143,6 +245,11 @@
   document.getElementById("name").style.opacity = "0";
   document.getElementById("arrow").style.opacity = "0";
   document.getElementById("searchbar").style.opacity = "0";
+  modal.classList.add('hidden');
+				blackbackground.classList.add('hidden');
+				back_button.classList.add('hide-backbutton');
+				
+				isModalOpened = 0;
   }else{
   document.getElementById("nav").style.height = "60px";
   document.getElementById("bottom-navigation").style.height = "55px";
@@ -151,6 +258,11 @@
   document.getElementById("name").style.opacity = "1";
   document.getElementById("arrow").style.opacity = "1";
   document.getElementById("searchbar").style.opacity = "1";
+  modal.classList.add('hidden');
+				blackbackground.classList.add('hidden');
+				back_button.classList.add('hide-backbutton');
+				
+				isModalOpened = 0;
   }
   this.oldScroll = this.scrollY;
 }
@@ -214,6 +326,7 @@
                   },
                   ContentType: "application/json",
                   success: function(response) {
+				    articleNum = 0;
                     document.getElementById("loading").classList.add('hiddenLoading');
 					document.getElementById("darkscreen").classList.add('hiddenLoading');
 					if(response.r == "reachedMax"){
@@ -221,15 +334,16 @@
 					}
 					else{
                     var len = response.length;
-					
+					articles = response;
 					for (var i = 0; i < len; i++) {
                       //var id = response[i].id;
                       var name = response[i].name;
                       var price = response[i].price;
                       var image = response[i].image;
-                      var tr_str = " <div class = 'article1'> "+image+" <div id = 'article1-top'> <h1> "+name+" </h1> <p> 200.000 km - Sarajevo </p> </div> <div id = 'article1-bottom' > <span> "+price+" KM </span> </div> </div>";
+					  var opis = response[i].kratki_opis;
+                      var tr_str = " <div class = 'article1' id='"+articleNum+"' onclick ='view_modal("+articleNum+")'> "+image+" <div id = 'article1-top'> <h1> "+name+" </h1> <p>"+opis+"</p> </div> <div id = 'article1-bottom' > <span> "+price+" KM </span> </div> </div>";
                       $("body").append(tr_str);
-					  
+					  articleNum++;
                     }
 					start+=limit;
                     }}
@@ -272,15 +386,15 @@
 						getData();
 					break;
 					case 5:
-						kategorija = "knjige";
+						kategorija = "instrumenti";
 						getData();
 					break;
 					case 6:
-						kategorija = "muzickiInstrumenti";
+						kategorija = "slike";
 						getData();
 					break;
 					case 7:
-						kategorija = "umjetnickeSlike";
+						kategorija = "knjige";
 						getData();
 					break;
 					case 8:
@@ -290,8 +404,7 @@
 				}
 			}
       </script>
-	<div id="bottom-navigation">
-	</div>
+	
     <script type="text/javascript" src="cordova.js"></script>
     <script type="text/javascript" src="js/index.js"></script>
   </body>

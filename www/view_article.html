@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+	<head></head>
+	<link rel="stylesheet" href="view_article.css">
+	<body>
+	<button onclick ="view_modal()">Activate modal</button>
+		<div id="black-background" class="hidden"></div>
+		<div id="view_modal" class="hidden">
+			<div class="view_modal_title"></div>
+			<div class="view_modal_image"></div>
+			<div class="view_modal_tabs">
+				<div class="view_modal_tab" onclick="view_modal_tab('view_modal_tab_info')">Info:</div>
+				<div class="view_modal_tab" onclick="view_modal_tab('view_modal_tab_opis')">Opis:</div>
+				<div class="view_modal_tab" onclick="view_modal_tab('view_modal_tab_kontakt')">Kontakt:</div>
+				<div class="view_modal_tab" onclick="view_modal_tab('view_modal_tab_cijena')">Cijena:</div>
+			</div>
+			<div id="view_modal_tab_info">
+				<div class="view_modal_info">Kratki opis: </div>
+				<div class="view_modal_info">Kategorija: </div>
+				<div class="view_modal_info">Datum-objave: </div>
+			</div>
+			<div id="view_modal_tab_opis" class="hidden-tab">
+				<div class="view_modal_opis">Detaljni opis: </div>
+				
+			</div>
+			<div id="view_modal_tab_kontakt" class="hidden-tab">
+				<div class="view_modal_info">Naziv Korisnika: </div>
+				<div class="view_modal_info">Broj telefona: </div>
+				<div class="view_modal_info">Lokacija: </div>
+			</div>
+			<div id="view_modal_tab_cijena" class="hidden-tab">
+				<div class="view_modal_info">Cijena: </div>
+			</div>
+		</div>
+		<div id="bottom-navigation">
+		<div class="tab-changer">1</div>
+		<div class="tab-changer">2</div>
+		<div class="tab-changer hide-backbutton" onclick="backbutton()" id="backbutton">
+			<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" style="width:20px">
+				<path stroke-linecap="round" stroke-linejoin="round" d="M9 15L3 9m0 0l6-6M3 9h12a6 6 0 010 12h-3" />
+			</svg>
+		</div>
+	</div>
+	</body>
+	<script>
+		var isModalOpened = 0;
+		var modal = document.getElementById ("view_modal");
+		var blackbackground = document.getElementById ("black-background");
+		var back_button = document.getElementById ("backbutton");
+		function view_modal(){
+			
+			if(isModalOpened){
+				modal.classList.add('hidden');
+				blackbackground.classList.add('hidden');
+				back_button.classList.add('hide-backbutton');
+				isModalOpened = 0;
+			}else{
+				modal.classList.remove('hidden');
+				blackbackground.classList.remove('hidden');
+				back_button.classList.remove('hide-backbutton');
+				isModalOpened = 1;
+			}
+			
+			
+		}
+		
+		function backbutton(){
+				modal.classList.add('hidden');
+				blackbackground.classList.add('hidden');
+				back_button.classList.add('hide-backbutton');
+				isModalOpened = 0;
+		}
+		
+		function view_modal_tab(name){
+			var info_tab = document.getElementById ("view_modal_tab_info");
+			var opis_tab = document.getElementById ("view_modal_tab_opis");
+			var kontakt_tab = document.getElementById ("view_modal_tab_kontakt");
+			var cijena_tab = document.getElementById ("view_modal_tab_cijena");
+			
+			var selected_tab = document.getElementById (name);
+			info_tab.classList.add('hidden-tab');
+			opis_tab.classList.add('hidden-tab');
+			kontakt_tab.classList.add('hidden-tab');
+			cijena_tab.classList.add('hidden-tab');
+			selected_tab.classList.remove('hidden-tab');
+		}
+	</script>
+</html>
