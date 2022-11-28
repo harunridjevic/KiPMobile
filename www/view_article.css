@@ -21,6 +21,25 @@
 	-moz-box-shadow: 0px 2px 5px 1px rgba(186,184,186,1);
 	box-shadow: 0px 2px 5px 1px rgba(186,184,186,1);
 }
+
+#view_modal_tab_info{
+	transition:0.3s;
+}
+
+#view_modal_tab_opis{
+	transition:0.3s;
+}
+
+
+#view_modal_tab_kontakt{
+	transition:0.3s;
+}
+
+
+#view_modal_tab_cijena{
+	transition:0.3s;
+}
+
 .view_modal_tabs{
 	background-color:white;
 	border-radius:5px;
@@ -33,6 +52,7 @@
 	display:flex;
 	align-items: center;
   justify-content: center;
+  transition:3s;
 }
 
 .view_modal_info{
@@ -48,6 +68,7 @@
 	box-shadow: 0px 2px 5px 1px rgba(186,184,186,1);
 	text-indent: 10px;
 	transition:3s;
+	overflow-y:scroll;
 }
 .view_modal_opis{
 	background-color:white;
@@ -59,12 +80,15 @@
 	-webkit-box-shadow: 0px 2px 5px 1px rgba(186,184,186,1);
 	-moz-box-shadow: 0px 2px 5px 1px rgba(186,184,186,1);
 	box-shadow: 0px 2px 5px 1px rgba(186,184,186,1);
-	text-indent: 10px;
+	padding-left:10px;
 	transition:3s;
+	overflow-y:scroll;
 }
 .view_modal_tab{
-	padding:0 5px;
+	padding:8px 10px;
+	position:relative;
 	font-size:20px;
+	transition:0.3s;
 }
 .view_modal_image{
 	border-radius:20px;
@@ -81,7 +105,11 @@
   transition: visibility 0s, opacity 0.5s linear;
 }
 .hidden-tab{
-	display:none;
+	opacity:0;
+	transform:scale(0.5,0.5);
+	position:absolute;
+	left:30%;
+	top:100px;
 }
 #bottom-navigation{
 	position:fixed;
@@ -103,7 +131,7 @@
 	height:32px;
 	top:5px;
 	text-align:center;
-	margin:auto 10px;
+	padding:auto 10px;
 	display:inline-block;
 }
 .back-button{

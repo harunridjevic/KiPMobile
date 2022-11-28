@@ -36,6 +36,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@600&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="css/index.css">
+	<link rel="stylesheet" href="view_article.css">
     <title>KiP.ba</title>
   </head>
   <style>
@@ -127,11 +128,20 @@
 
           <div style="position:relative;top:20px;display:block;width:100%;text-align:center;font-weight:bold"> Pocetna </div>
         </div>
-		<div id="articles" onclick="goToLogin()">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6" width="50px" style="position:relative;display:block;margin:auto;top:15px;">
+		<div class="invisible-articles" >
+			<div id="articles" style="height:45px;width:100%;position:relative;left:10px;top:-10px;">
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6" width="30px" style="position:relative;display:inline-block;margin-left:20px;top:8px;">
             <path fill-rule="evenodd" d="M7.5 6a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM3.751 20.105a8.25 8.25 0 0116.498 0 .75.75 0 01-.437.695A18.683 18.683 0 0112 22.5c-2.786 0-5.433-.608-7.812-1.7a.75.75 0 01-.437-.695z" clip-rule="evenodd" />
           </svg>
-          <div style="position:relative;top:20px;display:block;width:100%;text-align:center;font-weight:bold"> Profil </div>
+		  <div style="width:100%;text-align:center;top:-22px;position:relative;display:inline-block" onclick="goToProfile()">Profil</div>
+			</div>
+			<div id="articles" style="height:45px;width:100%;position:relative;left:10px;top:-20px;">
+		  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6" width="30px" style="position:relative;display:inline-block;margin-left:20px;top:7px;">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15m3 0l3-3m0 0l-3-3m3 3H9" />
+</svg>
+
+		  <div style="width:100%;text-align:center;top:-22px;position:relative;display:inline-block" onclick="goToLogin()">Prijava</div>
+			</div>
         </div>
         <div id="profile">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6" width="50px" style="position:relative;display:block;margin:auto;top:15px;">
@@ -385,8 +395,7 @@
 
     </main>
 	<div id="bottom-navigation">
-		<div class="tab-changer">1</div>
-		<div class="tab-changer">2</div>
+		<div class="tab-changer"><img src="img/kippysmall.png" style="width:100px;position:absolute;top:-7px;left:-10px;"></div>
 		<div class="back-button" onclick="backbutton()" id="backbutton" style="float:right">
 			<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" style="width:40px">
 				<path stroke-linecap="round" stroke-linejoin="round" d="M9 15L3 9m0 0l6-6M3 9h12a6 6 0 010 12h-3" />
@@ -396,6 +405,14 @@
     <script type="text/javascript" src="cordova.js"></script>
     <script type="text/javascript" src="js/index.js"></script>
     <script>
+	//session storage
+		var storage = window.localStorage;
+		
+			
+            var name = storage.getItem("username"); 
+            if (name != "null") {
+              document.getElementById("profile-name-text").innerHTML = name;
+            }
 	function next(curr,next){
 			var div1 = document.getElementById("div1");
 			var div2 = document.getElementById("div2");
@@ -429,12 +446,22 @@
 			next.style.opacity = "1";
 		}
 		
-	  function goToLogin() {
+	  //navbar buttons
+        function goToLogin() {
           window.location.href = "login.html";
         }
+		function goToReg() {
+          window.location.href = "registration.html";
+        }
+		function goToProfile(){
+			if(document.getElementById("profile-name-text").innerHTML == "Bez naloga")
+				window.location.href = "login.html";
+			
+		}
 		function goToHome() {
           window.location.href = "index.html";
         }
+		
       var loadFile = function(event) {
         var image = document.getElementById('output');
         image.src = URL.createObjectURL(event.target.files[0]);

@@ -67,11 +67,20 @@
 
           <div style="position:relative;top:20px;display:block;width:100%;text-align:center;font-weight:bold"> Pocetna </div>
         </div>
-		<div id="articles" onclick="goToLogin()">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6" width="50px" style="position:relative;display:block;margin:auto;top:15px;">
+		<div class="invisible-articles" >
+			<div id="articles" style="height:45px;width:100%;position:relative;left:10px;top:-10px;">
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6" width="30px" style="position:relative;display:inline-block;margin-left:20px;top:8px;">
             <path fill-rule="evenodd" d="M7.5 6a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM3.751 20.105a8.25 8.25 0 0116.498 0 .75.75 0 01-.437.695A18.683 18.683 0 0112 22.5c-2.786 0-5.433-.608-7.812-1.7a.75.75 0 01-.437-.695z" clip-rule="evenodd" />
           </svg>
-          <div style="position:relative;top:20px;display:block;width:100%;text-align:center;font-weight:bold"> Profil </div>
+		  <div style="width:100%;text-align:center;top:-22px;position:relative;display:inline-block" onclick="goToProfile()">Profil</div>
+			</div>
+			<div id="articles" style="height:45px;width:100%;position:relative;left:10px;top:-20px;">
+		  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6" width="30px" style="position:relative;display:inline-block;margin-left:20px;top:7px;">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15m3 0l3-3m0 0l-3-3m3 3H9" />
+</svg>
+
+		  <div style="width:100%;text-align:center;top:-22px;position:relative;display:inline-block" onclick="goToLogin()">Prijava</div>
+			</div>
         </div>
         <div id="profile">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6" width="50px" style="position:relative;display:block;margin:auto;top:15px;">
@@ -130,10 +139,10 @@
 			<div class="view_modal_title"><span id="view_modal_title"style="font-size:23px;position:absolute;top:20px;display:block;width:100%;text-align:center;">Megane</span></div>
 			<img class="view_modal_image" src="d">
 			<div class="view_modal_tabs">
-				<div class="view_modal_tab" onclick="view_modal_tab('view_modal_tab_info')">Info:</div>
-				<div class="view_modal_tab" onclick="view_modal_tab('view_modal_tab_opis')">Opis:</div>
-				<div class="view_modal_tab" onclick="view_modal_tab('view_modal_tab_kontakt')">Kontakt:</div>
-				<div class="view_modal_tab" onclick="view_modal_tab('view_modal_tab_cijena')">Cijena:</div>
+				<div class="view_modal_tab" id="view_modal_info_tab" onclick="view_modal_tab('view_modal_info_tab','view_modal_tab_info')" style="background-color:lightgray">Info:</div>
+				<div class="view_modal_tab" id="view_modal_opis_tab" onclick="view_modal_tab('view_modal_opis_tab','view_modal_tab_opis')">Opis:</div>
+				<div class="view_modal_tab" id="view_modal_kontakt_tab" onclick="view_modal_tab('view_modal_kontakt_tab','view_modal_tab_kontakt')">Kontakt:</div>
+				<div class="view_modal_tab" id="view_modal_cijena_tab" onclick="view_modal_tab('view_modal_cijena_tab','view_modal_tab_cijena')">Cijena:</div>
 			</div>
 			<div id="view_modal_tab_info">
 				<div class="view_modal_info" id="view_modal_info_kratkiopis">Kratki opis: </div>
@@ -155,8 +164,7 @@
 		</div>
 		
 	<div id="bottom-navigation">
-		<div class="tab-changer">1</div>
-		<div class="tab-changer">2</div>
+		<div class="tab-changer"><img src="img/kippysmall.png" style="width:100px;position:absolute;top:-7px;left:-10px;"></div>
 		<div class="back-button hide-backbutton" onclick="backbutton()" id="backbutton" style="float:right">
 			<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" style="width:40px">
 				<path stroke-linecap="round" stroke-linejoin="round" d="M9 15L3 9m0 0l6-6M3 9h12a6 6 0 010 12h-3" />
@@ -192,13 +200,13 @@
 				blackbackground.classList.remove('hidden');
 				back_button.classList.remove('hide-backbutton');
 				modal_img[0].src = selected_modal.querySelector("img").src;
-				document. getElementById("view_modal_cijena").innerHTML = "Cijena: "+articles[id].price;
+				document. getElementById("view_modal_cijena").innerHTML = "Cijena: "+articles[id].price+"KM";
 				document. getElementById("view_modal_title").innerHTML = articles[id].name;
 				document. getElementById("view_modal_info_kategorija").innerHTML = "Kategorija: "+articles[id].kategorija;
 				document. getElementById("view_modal_info_datum").innerHTML = "Datum objave: "+articles[id].datumobjave;
 				document. getElementById("view_modal_info_lokacija").innerHTML = "Lokacija: "+articles[id].lokacija;
 				document. getElementById("view_modal_info_kratkiopis").innerHTML = "Kratki opis: "+articles[id].kratki_opis;
-				document. getElementById("view_modal_info_opis").innerHTML = "Kratki opis: "+articles[id].opis;
+				document. getElementById("view_modal_info_opis").innerHTML = "Opis: "+articles[id].opis;
 				isModalOpened = 1;
 			}
 			
@@ -212,11 +220,24 @@
 				isModalOpened = 0;
 		}
 		
-		function view_modal_tab(name){
+		function view_modal_tab(curr,name){
 			var info_tab = document.getElementById ("view_modal_tab_info");
 			var opis_tab = document.getElementById ("view_modal_tab_opis");
 			var kontakt_tab = document.getElementById ("view_modal_tab_kontakt");
 			var cijena_tab = document.getElementById ("view_modal_tab_cijena");
+			
+			var info_tab_button = document.getElementById ("view_modal_info_tab");
+			var opis_tab_button = document.getElementById ("view_modal_opis_tab");
+			var kontakt_tab_button = document.getElementById ("view_modal_kontakt_tab");
+			var cijena_tab_button = document.getElementById ("view_modal_cijena_tab");
+			
+			info_tab_button.style.backgroundColor = "white";
+			opis_tab_button.style.backgroundColor = "white";
+			kontakt_tab_button.style.backgroundColor = "white";
+			cijena_tab_button.style.backgroundColor = "white";
+			
+			document.getElementById (curr).style.backgroundColor = "lightgray";
+			
 			
 			var selected_tab = document.getElementById (name);
 			info_tab.classList.add('hidden-tab');
@@ -272,6 +293,14 @@
         function goToLogin() {
           window.location.href = "login.html";
         }
+		function goToReg() {
+          window.location.href = "registration.html";
+        }
+		function goToProfile(){
+			if(document.getElementById("profile-name-text").innerHTML == "Bez naloga")
+				window.location.href = "login.html";
+			
+		}
 		function goToHome() {
           window.location.href = "index.html";
         }
@@ -355,8 +384,13 @@
                     $("body").append(categories);
               getData();
         });
+		
+		
+		//session storage
+		var storage = window.localStorage;
+		
 			
-            var name = sessionStorage.getItem("username");
+            var name = storage.getItem("username"); 
             if (name != "null") {
               document.getElementById("profile-name-text").innerHTML = name;
             }

@@ -116,7 +116,13 @@ nav{
 	box-shadow: 0px 2px 5px 1px rgba(186,184,186,1);
 }
 
-
+.invisible-articles{
+	display:inline-block;
+	float:right;
+	height:100px;
+	width:calc(50% - 20px);
+	margin:10px;
+}
 .invisible{
 	opacity:0;
 	pointer-events: none;
@@ -210,6 +216,11 @@ main{
 	-moz-box-shadow: 0px 2px 5px 1px rgba(186,184,186,1);
 	box-shadow: 0px 2px 5px 1px rgba(186,184,186,1);
 	z-index:1;
+	transition:0.1s;
+}
+
+.article1:active{
+	transform:scale(0.95);
 }
 #quickcategory{
 	width:94%;
@@ -302,13 +313,10 @@ main{
 .tab-changer{
 	position:relative;
 	color:white;
-	padding-top:13px;
 	background-color:#000000;
 	width:70px;
 	height:32px;
-	top:5px;
 	text-align:center;
-	margin:auto 10px;
 	display:inline-block;
 }
 .back-button{
