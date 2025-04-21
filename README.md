@@ -77,7 +77,7 @@ While I learned a lot from making a mobile version of the KiP marketplace, I thi
 
 ## Acknowledgements
 
-Thanks to all the resources and tutorials that helped shape this project. KiP.ba mobile reflects my early steps into mobile app development.
+Thanks to all the resources and tutorials that helped shape this project. KiP.ba mobile reflects my early steps into mobile app development. This project was made by Harun Riđević.
 
 ---
 
