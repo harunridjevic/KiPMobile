@@ -2,7 +2,9 @@
 
 # KiP.ba Mobile
 
-![Kippy](kippy.png)
+<p align="center">
+   <img src="kippy.png" width="300" />
+</p>
 
 Welcome to **KiP.ba Mobile**, an android marketplace project created in 2022! (say hi to Kippy 👋) This was an experimental project designed to showcase my skills in app development with cordova using PHP, MySQL, HTML, CSS, and JavaScript. The website simulates a platform for users to buy and sell products. 
 
@@ -65,7 +67,11 @@ Welcome to **KiP.ba Mobile**, an android marketplace project created in 2022! (s
 
 App screens:
 
-![homepage](screenshots/home.png) ![login](screenshots/login.png) ![homepage](screenshots/nav.png)
+<p align="center">
+  <img src="screenshots/home.png" width="300" />
+  <img src="screenshots/login.png" width="300" />
+  <img src="screenshots/nav.png" width="300" />
+</p>
 
 ---
 
