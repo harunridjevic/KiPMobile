@@ -65,7 +65,7 @@ Welcome to **KiP.ba Mobile**, an android marketplace project created in 2022! (s
 
 App screens:
 
-![homepage](screenshots/homepage.png) ![login](screenshots/login.png) ![homepage](screenshots/nav.png)
+![homepage](screenshots/home.png) ![login](screenshots/login.png) ![homepage](screenshots/nav.png)
 
 ---
 
