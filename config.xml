@@ -29,6 +29,5 @@
         <allow-intent href="itms-apps:*" />
     </platform>
     <plugin name="com.telerik.plugins.nativepagetransitions" spec="^0.7.0" />
-    <engine name="android" spec="~7.0.0" />
     <engine name="browser" spec="~5.0.1" />
 </widget>
